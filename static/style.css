@@ -1,0 +1,187 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+    radial-gradient(circle at top left,#2f00ff,#0d0d0d 35%),
+    radial-gradient(circle at bottom right,#00fff2,#0d0d0d 35%);
+
+    background-color:#0d0d0d;
+    color:white;
+
+    padding:20px;
+}
+
+#main_container{
+
+    width:100%;
+    max-width:850px;
+
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,0.05);
+
+    backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+    0 0 30px rgba(0,255,255,.15),
+    0 0 70px rgba(119,0,255,.2);
+
+}
+
+#main_container::before{
+
+    content:"AI Study Notes Generator";
+
+    font-size:32px;
+    font-weight:bold;
+
+    text-align:center;
+
+    margin-bottom:10px;
+
+    background:linear-gradient(
+    90deg,
+    cyan,
+    #8a2be2,
+    #00ffbf
+    );
+
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+#result{
+
+    min-height:350px;
+    max-height:420px;
+
+    overflow-y:auto;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,0.03);
+
+    border:1px solid rgba(0,255,255,.2);
+
+    box-shadow:
+    inset 0 0 20px rgba(0,255,255,.1);
+
+    line-height:1.8;
+
+    color:#f2f2f2;
+}
+
+#result::-webkit-scrollbar{
+    width:6px;
+}
+
+#result::-webkit-scrollbar-thumb{
+    border-radius:20px;
+    background:cyan;
+}
+
+#user_input{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:16px;
+
+    background:#171717;
+
+    color:white;
+
+    font-size:16px;
+
+    border:1px solid rgba(0,255,255,.3);
+
+    transition:.3s;
+}
+
+#user_input:focus{
+
+    box-shadow:
+    0 0 15px cyan;
+
+    transform:scale(1.02);
+}
+
+#btn{
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:16px;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-size:17px;
+    font-weight:bold;
+
+    background:linear-gradient(
+    90deg,
+    #00d9ff,
+    #8a2be2
+    );
+
+    transition:.4s;
+}
+
+#btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 0 20px cyan,
+    0 0 40px #8a2be2;
+}
+
+@media(max-width:700px){
+
+#main_container{
+
+padding:18px;
+
+}
+
+#result{
+
+min-height:280px;
+
+}
+
+#main_container::before{
+
+font-size:24px;
+
+}
+
+}

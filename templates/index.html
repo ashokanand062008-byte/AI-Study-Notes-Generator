@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href="{{url_for('static' , filename = 'style.css')}}">
+    <title>Ai Study Notes Generator</title>
+</head>
+<body>
+    <div id="main_container">
+        <nav id="result"></nav>
+        <input id="user_input" placeholder="What to do wanna learn today ?? " name = "user_input">
+        <button id="btn">Generate Notes</button>
+        
+    </div>
+    <script>
+        var btn = document.getElementById('btn');
+        var user_input = document.getElementById('user_input');
+        var result = document.getElementById('result');
+        btn.addEventListener('click',send_notes);
+        async function send_notes(){
+            var data = await fetch('/gen_notes',{
+                method:"POST",
+                body:user_input.value,
+            });
+            var generated_notes = await data.text();
+            result.innerHTML = generated_notes;
+        }
+    </script>
+</body>
+</html>
